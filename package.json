@@ -1,0 +1,18 @@
+{
+	"private": true,
+	"scripts": {
+		"build": "nitro build",
+		"dev": "nitro dev",
+		"prepare": "husky",
+		"preview": "node .output/server/index.mjs"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown"
+	},
+	"devDependencies": {
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"nitropack": "latest",
+		"prettier": "3.2.5"
+	}
+}
