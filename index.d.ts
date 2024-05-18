@@ -1,6 +1,7 @@
 declare module NodeJS {
 	interface ProcessEnv {
-		MONGODB_URI: string;
+		NITRO_MONGODB_URI: string;
 		SECRET_KEY: string;
+		NITRO_MONGODB_PRODU_URI: string;
 	}
 }

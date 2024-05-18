@@ -9,6 +9,12 @@ export default defineNitroConfig({
 	},
 	imports: {
 		dirs: ["./server/models/**"],
+		imports: [
+			{
+				from: "consola",
+				name: "consola",
+			},
+		],
 	},
 	routeRules: {
 		"/api/**": {
@@ -17,5 +23,11 @@ export default defineNitroConfig({
 	},
 	runtimeConfig: {
 		mongodbUri: "",
+	},
+	logLevel: {
+		toFixed: 1,
+	},
+	experimental: {
+		asyncContext: true,
 	},
 });

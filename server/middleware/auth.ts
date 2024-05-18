@@ -1,7 +1,7 @@
 export default defineEventHandler((event) => {
 	const header = event.headers.get("Authorization");
 	const path = event.path;
-
+	console.log(process.env.NODE_ENV);
 	if (path.startsWith("/api/movie")) {
 		if (!header)
 			throw createError({status: 401, message: "Unauthorized access"});
