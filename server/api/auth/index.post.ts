@@ -39,6 +39,7 @@ export default defineEventHandler(async (event) => {
 			email: user.email,
 			id: user.id,
 		});
+		setResponseStatus(event, 200, "Loggedin success");
 		return {
 			accessToken,
 			expireIn: 3600,

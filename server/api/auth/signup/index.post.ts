@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
 
 		const newUser = new User(body.data);
 		const result = await newUser.save();
-
+		setResponseStatus(event, 201, "User created successfully.");
 		return result;
 	} catch (error) {
 		throw createError({
