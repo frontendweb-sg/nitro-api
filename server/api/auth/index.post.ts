@@ -1,4 +1,5 @@
 import {object, string} from "zod";
+import {Jwt} from "~/utils/jwt";
 
 const validator = object({
 	email: string().email("Invalid email").min(1),
@@ -34,7 +35,15 @@ export default defineEventHandler(async (event) => {
 			});
 		}
 
-		return user;
+		const accessToken = Jwt.getToken({
+			email: user.email,
+			id: user.id,
+		});
+		return {
+			accessToken,
+			expireIn: 3600,
+			user,
+		};
 	} catch (error) {
 		throw createError({
 			status: 400,
