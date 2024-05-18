@@ -14,7 +14,7 @@ export class Jwt {
 			if (error) {
 				throw createError({
 					status: 401,
-					message: error.message,
+					message: "Invalid token",
 				});
 			}
 			return decode;

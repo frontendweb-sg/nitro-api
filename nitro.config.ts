@@ -7,9 +7,15 @@ export default defineNitroConfig({
 			options: {},
 		},
 	},
+	imports: {
+		dirs: ["./server/models/**"],
+	},
 	routeRules: {
 		"/api/**": {
 			cors: true,
 		},
+	},
+	runtimeConfig: {
+		mongodbUri: "",
 	},
 });
