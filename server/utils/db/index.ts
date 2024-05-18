@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export async function useDatabase() {
+export const connectDb = async () => {
 	try {
 		await mongoose.connect(process.env.MONGODB_URI);
 		console.log("Mongoose connected!");
@@ -10,4 +10,4 @@ export async function useDatabase() {
 			message: error.message,
 		});
 	}
-}
+};

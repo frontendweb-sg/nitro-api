@@ -1,3 +1,3 @@
-export default eventHandler((event) => {
-	return "<h1>Hello World</h1>";
+export default defineEventHandler((event) => {
+	return "Response";
 });
